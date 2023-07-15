@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% extends 'base.html'%} {% load static%} {% block content%}
+    <h1>TEST</h1>
+    <h2>my name is {{name|capfirst}}</h2>
+    <h2>my age is {{age|default:'not found'}}</h2>
+    <h2>my name is {{name|add:' another name'}}</h2>
+    <h2>my name is {{name|cut:' '}}</h2>
+    <!-- <h2>my age is {{age|slice:':2'}}</h2> -->
+    <!-- <h2>my age is {{age|length}}</h2> -->
+    <h2>my age is {{age|filesizeformat}}</h2>
+
+    {% if name == 'Sara1' %}
+    <p>welcome</p>
+    {% elif name == 'mohamed' %}
+    <p>hello</p>
+    {% else %}
+    <p>not found</p>
+    {% endif %} {% for c in name %}
+    <p>{{c}}</p>
+    {% endfor %}
+    <img src="{%static 'images/11.png'%}" alt="" />
+    {% endblock %}
+  </body>
+</html>

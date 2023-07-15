@@ -1,0 +1,14 @@
+{% extends 'base.html'%} 
+{%block content%}
+<h1>About haha</h1>
+<form method="POST"> 
+    {% csrf_token %} # security layer form django
+    {% comment %} <input type='text' name='username' placeholder='username'>
+    <br>
+    <input type='password' name='password' placeholder='password'>
+    <br> {% endcomment %}
+
+    {{lf}}
+    <input type='submit' value='save'>
+</form>
+{%endblock content%}
